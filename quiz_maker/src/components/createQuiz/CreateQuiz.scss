@@ -1,0 +1,27 @@
+input {
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  background-color: transparent;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid #000;
+}
+
+.question {
+  padding: 0 !important;
+  input {
+    margin: 10px !important;
+  }
+}
+
+.add-remove {
+  text-align: center;
+  height: 40px;
+  width: 40px;
+}

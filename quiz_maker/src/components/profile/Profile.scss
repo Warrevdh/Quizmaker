@@ -1,0 +1,141 @@
+.profile_header {
+  display: flex;
+  width: 100%;
+  height: 20%;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  .backBtn {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 30px;
+    svg {
+      width: 50px;
+    }
+    .text {
+      display: none;
+    }
+  }
+
+  .adminLink {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 30px;
+    svg {
+      width: 50px;
+    }
+  }
+}
+.profile_form {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.profile_bg {
+  border-radius: 20px;
+  height: 40%;
+  width: 80% !important;
+  background-color: #ffffff;
+  flex-direction: column;
+}
+
+.ProfileIcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-top: 50px;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background-color: #d1f4ff;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  svg {
+    width: 50%;
+    height: 50%;
+  }
+}
+.check_verified_container {
+  background-color: #ffffff !important;
+  .checkmark {
+    width: 1.5rem;
+    height: 1.5rem;
+
+    path {
+      stroke: #01ca0b;
+      stroke-width: 1.5rem;
+    }
+  }
+  .cross {
+    width: 1.5rem;
+    height: 1.5rem;
+
+    path {
+      stroke: #ff0000;
+      stroke-width: 0.5rem;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .ProfileIcon {
+    width: 150px;
+    height: 150px;
+    z-index: 1;
+    margin-bottom: 100px;
+  }
+  .profile_bg {
+    border-radius: 20px;
+    height: 80%;
+    max-width: 50%;
+    background-color: #ffffff;
+    flex-direction: column;
+  }
+  .profile_form {
+    width: 100%;
+    height: 80%;
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .profile_header {
+    .backBtn {
+      margin: 10px;
+      svg {
+        width: 50px;
+      }
+      .text {
+        color: black;
+        display: block;
+        font-size: large;
+      }
+    }
+
+    .adminLink {
+      margin: 10px;
+      svg {
+        width: 50px;
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+$body-bg: #fff6d5;
+
+.body {
+  height: 90%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+.dropdown {
+  height: 32px !important;
+  width: 32px !important;
+  background-color: transparent;
+}
+
+.dropdown-toggle {
+  padding: 0 !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
+.dropdown-item {
+  text-align: center !important;
+}
+
+.dropDownLink {
+  text-decoration: none;
+  color: black;
+  height: 100%;
+  width: 100%;
+}
+
+@import "~bootstrap/scss/bootstrap.scss";

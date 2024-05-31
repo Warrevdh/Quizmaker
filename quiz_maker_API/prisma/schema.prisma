@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model question {
+  id       String  @id @default(uuid())
+  question String  @db.VarChar(255)
+  answer   String  @db.VarChar(255)
+  choice1  String  @db.VarChar(255)
+  choice2  String? @db.VarChar(255)
+  choice3  String? @db.VarChar(255)
+  quiz_id  String  @db.Char(36)
+  quiz     quiz    @relation(fields: [quiz_id], references: [id])
+}
+
+model quiz {
+  id          String     @id @default(uuid())
+  description String     @db.VarChar(255)
+  category    String     @db.VarChar(255)
+  createdAt   DateTime   @default(now())
+  name        String     @db.VarChar(255)
+  user_id     String     @default(uuid())
+  user        user       @relation(fields: [user_id], references: [id])
+  question    question[]
+
+  @@index([user_id], map: "quiz_user_id_foreign")
+}
+
+model user {
+  id        String   @id @default(uuid())
+  username  String?  @db.VarChar(255)
+  createdAt DateTime @default(now())
+  auth0id   String   @unique @db.VarChar(255)
+  email     String   @unique @db.VarChar(255)
+  role      Role     @default(USER)
+  quiz      quiz[]
+}
+
+enum Role {
+  ADMIN
+  USER
+}
